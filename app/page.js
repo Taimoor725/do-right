@@ -1,103 +1,224 @@
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
+import NavBar from '@/components/comman/NavBar'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import KasiaService from '@/components/home/KasiaService';
+import Link from 'next/link';
+import MedicalServices from '@/components/home/MedicalServices';
+import LandingPage from '@/components/home/LandingPage';
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+function page() {
+    return (
+        <div className='w-auto h-auto relative overflow-x-hidden bg-black'>
+            <NavBar />
+            <LandingPage/>
+            <Partner />
+            <ArmdomPage />
+            <EventcomPage />
+            <PromPage />
+            <KasiaPage />
+            <KasiaService />
+            <MedicalServices />
+            <History />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    )
 }
+
+export default page
+
+
+
+
+
+const Partner = () => {
+    return (
+        <div className='w-screen h-screen flex relative'>
+            <div className='flex w-full h-full'>
+                <Image src={'/main/partnerPage.png'} width={4000} height={4000} alt='partnerpage' className='w-full h-full object-cover' />
+            </div>
+            <div className=' absolute flex  flex-col gap-20 top-[25%] right-[5%] w-auto'>
+                <div className='flex justify-center items-center'>
+                    <Image src={'/logo/mainLogo.png'} alt='logo1' width={400} height={400} className='w-[35rem] object-cover' />
+                </div>
+                <div className='flex w-full  justify-center items-center gap-20'>
+                    <Image src={'/logo/armdom.png'} alt='logo2' width={400} height={400} className='w-[25rem] object-cover' />
+                    <Image src={'/logo/eventcom.png'} alt='logo3' width={400} height={400} className='w-[25rem] mt-3 object-cover' />
+                    <Image src={'/logo/prom.png'} alt='logo2' width={400} height={400} className='w-[20rem] object-cover' />
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+const ArmdomPage = () => {
+    return (
+        <div className="w-screen h-screen relative flex items-center justify-center overflow-hidden text-white" id='armdomPage'>
+            {/* Background Image */}
+            <Image
+                src="/main/armdom.png"
+                alt="armdom-page"
+                // layout="fill"
+                objectFit="cover"
+                width={4000}
+                height={4000}
+                className="z-0"
+            />
+
+            {/* Overlay Content */}
+            <div className="absolute right-[10%] z-10 max-w-3xl flex flex-col justify-center items-center text-center  _bg-[red]">
+                {/* Logo */}
+                <div className=''>
+                    <Image src={'/logo/armdom.png'} alt='page-logo' width={400} height={400} className='w-[30rem] object-cover' />
+                </div>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    ARMCOM is a boutique media buying and planning agency with offices in Riyadh and Lebanon, offering strategic and innovative marketing solutions. They combine diverse expertise to create integrated campaigns across TV, outdoor, online, and events.
+                </p>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    Their services include market analysis, media planning, PR strategies, guest management, and video production. ARMCOM also specializes in campaign monitoring, optimization, and tailored brand experiences. Their philosophy is doing what they love: building stories that deeply engage and deliver results.
+                </p>
+            </div>
+
+
+            <Link href={'#eventcomPage'} className="absolute right-20 z-10 cursor-pointer hover:scale-115">
+                <Image src={'/icons/sortLeft.png'} alt='navigation' width={60} height={60} className='w-32 rotate-[180deg] object-cover' />
+            </Link>
+        </div>
+    );
+};
+
+const EventcomPage = () => {
+    return (
+        <div className='w-screen h-screen relative' id='eventcomPage'>
+            <div className='absolute w-full h-full top-0 left-0'>
+                <Image src={'/main/eventcomPage.png'} alt='eventcom-page' width={4000} height={4000} className='w-full h-full object-cover' />
+            </div>
+
+            {/* text area */}
+            <div className="absolute left-[10%] top-1/2 -translate-y-1/2 z-10 max-w-3xl flex flex-col justify-center items-center text-center  _bg-[red]">
+                {/* Logo */}
+                <div className=''>
+                    <Image src={'/logo/eventcom.png'} alt='page-logo' width={400} height={400} className='w-[30rem] object-cover' />
+                </div>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    Event Com is a creative event management agency that crafts unforgettable experiences through innovation, collaboration, and flawless execution. They deliver corporate, governmental, social, luxury, and experiential events with precision and creativity
+                </p>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    Their services include event management, entertainment, virtual events, drone shows, 3D design, AV systems, PR, and marketing management. With a passion for innovation and attention to detail, they turn imagination into impactful realities. Event Com ensures every event is immersive, engaging, and leaves a lasting impression
+                </p>
+
+
+
+                {/* right arrows */}
+                <Link href={"#PromPage"} className="absolute -right-24 z-10 cursor-pointer hover:scale-115">
+                    <Image src={'/icons/sortLeft.png'} alt='navigation' width={60} height={60} className='w-32 rotate-[180deg] object-cover' />
+                </Link>
+
+                {/* left arrow */}
+                <Link href={"#armdomPage"} className="absolute -left-24 z-10 cursor-pointer hover:scale-115">
+                    <Image src={'/icons/sortLeft.png'} alt='navigation' width={60} height={60} className='w-32 object-cover' />
+                </Link>
+
+            </div>
+        </div>
+    )
+}
+
+const PromPage = () => {
+    return (
+        <div className="w-screen h-screen relative flex items-center justify-center overflow-hidden text-white" id="PromPage">
+            {/* Background Image */}
+            <Image
+                src="/main/promPage.png"
+                alt="armdom-page"
+                // layout="fill"
+                objectFit="cover"
+                width={4000}
+                height={4000}
+                className="z-0"
+            />
+
+            {/* Overlay Content */}
+            <div className="absolute right-[10%] z-10 max-w-3xl flex flex-col justify-center items-center text-center  _bg-[red]">
+                {/* Logo */}
+                <div className=''>
+                    <Image src={'/logo/prom.png'} alt='page-logo' width={400} height={400} className='w-[30rem] object-cover' />
+                </div>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    Promodirect is a production company providing traditional and contemporary advertising solutions across the Arab region. They specialize in brand activation, event planning, exhibition stand production, BTL material distribution, and targeted campaigns.
+                </p>
+                <p className="text-sm md:text-xl font-light text-white/70 leading-relaxed mt-10 px-12">
+                    With over 15 years of experience, they deliver innovative, cost-effective services that engage audiences. Their strategies include leveraging beauty salons for female consumer reach and introducing mobile mupis for dynamic outdoor advertising. Promodirect focuses on building customer loyalty, boosting sales, and achieving measurable growth.
+                </p>
+
+                <Link href={"#eventcomPage"} className="absolute -left-20 z-10 cursor-pointer hover:scale-115">
+                    <Image src={'/icons/sortLeft.png'} alt='navigation' width={60} height={60} className='w-32 object-cover' />
+                </Link>
+            </div>
+        </div>
+    );
+};
+
+const KasiaPage = () => {
+    return (
+        <div className='w-screen h-screen relative'>
+            <div className='w-full h-full'>
+                <Image src={'/main/kasia.png'} width={4000} height={4000} alt='kasia-page' className='h-screen object-fill' />
+            </div>
+
+            <div className='absolute top-1/2 -translate-y-1/2 right-[10%] flex flex-col gap-20'>
+                <Image src={'/logo/kasia.png'} alt='kasia-logo' width={400} height={400} className='w-[50rem] object-cover z-[10]' />
+                <div className='flex text-5xl font-bold text-white justify-evenly gap-32'>
+                    <div>COFFEE</div>
+                    <div>CATERING</div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+const History = () => {
+    return (
+        <div className="w-screen h-screen relative flex items-center justify-center overflow-hidden text-white">
+            {/* Background Image */}
+            <Image
+                src="/main/history.png"
+                alt="history-page"
+                // layout="fill"
+                objectFit="cover"
+                width={4000}
+                height={4000}
+                className="z-0"
+            />
+
+            {/* Overlay Content */}
+            <div className="absolute right-[10%] z-10 max-w-3xl flex flex-col justify-center items-center text-center  _bg-[red]">
+                {/* Logo */}
+                {/* <div className='flex justify-start text-5xl bg-[red]'>
+                    
+                </div> */}
+                <div className="text-sm md:text-xl font-light text-white/70 leading-relaxed text-start mt-10 px-12 flex flex-col gap-8">
+                    <span className='text-5xl text-white'>Our History</span>
+                    Behind the glamor of every successful start-up are a dozen
+                    others that didn’t make it. Building a company is grueling.
+                    Sleepless nights, self-doubt, and countless obstacles, are the
+                    day-in, day-out reality of committing to this incredibly hard,
+                    and in many ways, irrational, journey
+                </div>
+                <p className="text-xl md:text-2xl font-light text-white/70 leading-relaxed mt-10 text-start px-12">
+                    Some days you’ve got it all figured out, and others you’re
+                    questioning everything. Some days people understand your
+                    vision and others, you’re met with only naysayers. There isn’t a
+                    routine, there isn’t a safety net. But there is a common
+                    denominator, willpower.
+
+                </p>
+            </div>
+        </div>
+    );
+};
